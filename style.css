@@ -203,7 +203,7 @@ section {
 /* Skills */
 
 #skills {
-  background-color: var(--color-yellow);
+  background-color: #cce5ff;
 }
 
 .section__container {
@@ -339,4 +339,16 @@ section {
   left: 50%;
   margin-top: 8px;
   background-color: var(--color-dark-white);
+}
+
+/* Contact */
+#contact {
+  background-color: #a9a9a9;
+  padding: 4px 0;
+}
+
+.contact__title,
+.contact__rights,
+.contact__email {
+  color: white;
 }
