@@ -81,9 +81,11 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #a9a9a9;
+  /* background-color: #a9a9a9; */
   align-items: center;
   color: var(--color-white);
   padding: 16px;
@@ -113,6 +115,7 @@ p {
 #home {
   background: url(imgs/visual.png) center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
@@ -136,6 +139,15 @@ p {
   border: 2px solid var(--color-grey);
   border-radius: 4px;
   color: var(--color-grey);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  top: 17px;
+  font-size: 24px;
+  color: white;
+  display: none;
 }
 
 /* Section common */
@@ -351,4 +363,43 @@ section {
 .contact__rights,
 .contact__email {
   color: white;
+}
+
+/* For below 768px screen width  */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .navbar_menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+  .magor {
+    margin-bottom: 38px;
+  }
+  .about__jobs {
+    flex-direction: column;
+  }
+  .job {
+    margin-bottom: 38px;
+  }
+  .project {
+    flex-grow: 1; /* 알아서화면 하나에 맞게 채워줌 */
+  }
+  .category_btn {
+    margin-bottom: 15px;
+  }
 }
