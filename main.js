@@ -21,12 +21,23 @@ document.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({ behavior: 'smooth' })
+
+    scrollIntoView(link);
 
 })
 
 // Contact me 버튼 앵커 제어
+const contactButton = document.querySelector('.home__contact');
+contactButton.addEventListener('click', (event) => {
+    scrollIntoView('#contact');
+})
+
+//앵커함수 공통처리
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth' })
+}
+
 
 //네비 햄버거 클릭 제어
 const navbarButton = document.querySelector('.navbar__toggle-btn');
