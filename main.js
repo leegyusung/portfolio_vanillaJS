@@ -49,3 +49,26 @@ document.addEventListener('click', (event) => {
         navbar.classList.add('navbar--dark')
     }
 })
+
+
+//스크롤 내릴 시, 홈 화면 opacity 조정
+const home = document.querySelector('#home');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+})
+
+// 스크롤 내릴 시, arrow_up 함수 표시
+const arrowUp = document.querySelector('.arrow_up')
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible')
+    } else {
+        arrowUp.classList.remove('visible')
+    }
+})
+
+// arrow_up 버튼 이벤트
+arrowUp.addEventListener('click', () => {
+    scrollIntoView('#home')
+})

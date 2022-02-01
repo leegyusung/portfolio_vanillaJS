@@ -372,6 +372,20 @@ section {
   color: white;
 }
 
+/* Scroll */
+.arrow_up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 50px;
+  border-radius: 50%;
+  display: none;
+}
+
+.arrow_up.visible {
+  display: block;
+}
+
 /* For below 768px screen width  */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
