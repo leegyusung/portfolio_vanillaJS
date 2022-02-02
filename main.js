@@ -23,7 +23,7 @@ document.addEventListener('click', (event) => {
     }
 
     scrollIntoView(link);
-
+    navbarMenu.classList.remove('open');
 })
 
 
@@ -116,3 +116,9 @@ document.addEventListener('scroll', () => {
 arrowUp.addEventListener('click', () => {
     scrollIntoView('#home')
 });
+
+// 햄버거 버튼 눌렀을때, 네비메뉴보이게 하기
+const navBtn = document.querySelector('.navbar__toggle-btn');
+navBtn.addEventListener('click', (event) => {
+    navbarMenu.classList.toggle('open');
+})
