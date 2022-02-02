@@ -110,9 +110,9 @@ document.addEventListener('scroll', () => {
     } else {
         arrowUp.classList.remove('visible')
     }
-})
+});
 
 // arrow_up 버튼 이벤트
 arrowUp.addEventListener('click', () => {
     scrollIntoView('#home')
-})
+});
