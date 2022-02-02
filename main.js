@@ -26,6 +26,21 @@ document.addEventListener('click', (event) => {
 
 })
 
+
+//네비게이션 클릭 시, 테두리 설정
+navbarMenu.addEventListener('click', (event) => {
+    const navbarMenuList = document.querySelector('.navbar_menu').children;
+    for (var i = 0; i < navbarMenuList.length; i++) {
+        if (navbarMenuList[i].classList.length > 1) {
+            navbarMenuList[i].classList.remove('active');
+        }
+    }
+    const target = event.target;
+    const link = target.dataset.link;
+    const navbarToggle = document.querySelector(`li[data-link="${link}"]`)
+    navbarToggle.classList.add('active');
+})
+
 // Contact me 버튼 앵커 제어
 const contactButton = document.querySelector('.home__contact');
 contactButton.addEventListener('click', (event) => {
