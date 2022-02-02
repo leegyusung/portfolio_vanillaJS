@@ -41,6 +41,35 @@ navbarMenu.addEventListener('click', (event) => {
     navbarToggle.classList.add('active');
 })
 
+
+// 프로젝트 필터링 제어
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (event) => {
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+
+    // 프로젝트 필터링 버튼 테두리 설정
+    const active = document.querySelector('.category_btn.active');
+    active.classList.remove('active');
+    const categotyBtn = document.querySelector(`button[data-filter="${filter}"]`);
+    categotyBtn.classList.add('active');
+
+    if (filter == null) {
+        return;
+    }
+    projects.forEach((project) => {
+        if (project.dataset.type === filter || filter === '*') {
+            project.classList.remove('invisible');
+        } else {
+            project.classList.add('invisible');
+        }
+    })
+})
+
+
+
+
 // Contact me 버튼 앵커 제어
 const contactButton = document.querySelector('.home__contact');
 contactButton.addEventListener('click', (event) => {

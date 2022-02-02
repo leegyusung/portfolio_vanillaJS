@@ -326,6 +326,11 @@ section {
   display: flex;
   justify-content: center;
 }
+
+.project.invisible {
+  display: none;
+}
+
 .project:hover .project_description {
   opacity: 0.8;
 }
